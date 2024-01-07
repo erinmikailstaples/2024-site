@@ -1,43 +1,34 @@
 {{!< default}}
-{{!-- The tag above means: insert everything in this file into the body of the default.hbs template --}}
 
-<main class="gh-main gh-outer">
+<main id="archives" class="main">
 
-    {{#author}}
-        <section class="gh-archive{{#if @custom.show_publication_info_sidebar}} has-sidebar{{/if}} gh-inner">
-            <div class="gh-archive-inner">
-                <div class="gh-archive-wrapper">
-                    <h1 class="gh-article-title is-title">
-                        {{#if website}}
-                            <a class="gh-author-social-link" href="{{website}}" target="_blank" rel="noopener">{{name}}</a>
-                        {{else}}
-                            {{name}}
-                        {{/if}}
-                    </h1>
-                    {{#if bio}}
-                        <p class="gh-article-excerpt">{{bio}}</p>
-                    {{/if}}
-                    <footer class="gh-author-meta">
-                        <div class="gh-author-social">
-                            {{#if facebook}}
-                                <a class="gh-author-social-link" href="{{facebook_url}}" target="_blank" rel="noopener">{{> "icons/facebook"}}</a>
-                            {{/if}}
-                            {{#if twitter}}
-                                <a class="gh-author-social-link" href="{{twitter_url}}" target="_blank" rel="noopener">{{> "icons/twitter"}}</a>
-                            {{/if}}
-                        </div>
-                        {{#if location}}
-                            <div class="gh-author-location">{{location}}</div>
-                        {{/if}}
-                    </footer>
-                </div>
-                {{#if profile_image}}
-                    <img class="gh-article-image" src="{{img_url profile_image size="s"}}" alt="{{name}}">
-                {{/if}}
-            </div>
-        </section>
-    {{/author}}
+    <!-- start: .content-wrapper -->
+    <div class="content-wrapper">
     
-    {{> "components/post-list" feed="archive" postFeedStyle=@custom.post_feed_style showTitle=false showSidebar=@custom.show_publication_info_sidebar}}
+        {{#author}}
+            <div class="grid-container">
+                {{> author-box }}
+            </div>
+        {{/author}}
+        
+        <div class="clear"></div>
+    
+    </div>
+    <!-- end: .content-wrapper -->
+
+    <div class="grid-container {{#match @custom.archives_layout "Masonry"}}{{/match}}">
+        <div class="epcl-row">
+            <!-- start: .content-wrapper -->
+            <div class="content-wrapper">      
+                {{#match @custom.archives_layout "Masonry"}}
+                    {{> home-blocks/grid-posts}}
+                {{else}}
+                    {{> home-blocks/classic-posts}}
+                {{/match}}                 
+            </div>
+            <!-- end: .content-wrapper -->
+        </div>
+    </div>
+
 
 </main>

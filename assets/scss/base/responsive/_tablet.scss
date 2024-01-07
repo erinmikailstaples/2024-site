@@ -1,0 +1,131 @@
+@media screen and (min-width: 768px) and (max-width: 990px){
+
+    body{ font-size: 14px; }
+    .classic-sidebar div.left-content{ padding-left: 20px; }
+	.grid-container{ padding-left: 40px; padding-right: 40px; }
+	.np-tablet{ padding-left: 0; padding-right: 0; }
+    .nofloat-tablet{ float: none !important; }
+    .no-sidebar:not(#single){ display: none !important; }
+
+    .widget{ margin-bottom: 30px; }
+    aside{
+        .default-sidebar, .mobile-sidebar{
+            display: flex;
+            flex-flow: row wrap;
+        }
+    }
+    aside .widget{
+        width: 50%;
+        float: left;
+        border: 0;
+        padding: 0 30px;
+        flex-grow: 1;
+        box-sizing: border-box;
+        &.widget_search{
+            background: none;
+        }
+    }
+    #sidebar {      
+        float: none;
+        padding-left: 0;
+        padding-right: 0;
+        margin-top: 0 !important;         
+        .sidebar-wrapper{
+            margin: 25px 0 0;
+        }
+    }
+
+    #single.fullcover .featured-image .info{
+        max-width: 60%;
+    }
+    #single{
+        .left-content{
+            padding: 0 20px;
+        }
+    }
+
+    #header{
+        .logo{
+
+            a{
+                font-size: 42px;
+            }
+            .title{
+                font-size: 50px;
+            }
+        }
+    }
+
+    /* @group Global Articles List */
+
+    div.meta{
+        font-size: 12px;
+        .meta-info{ margin-right: 5px; }
+    }
+    div.articles{
+        article{
+            font-size: 16px;
+            .post-excerpt{ margin-bottom: 20px; }
+        }
+    }
+    div.articles.grid-posts{
+        article{
+            font-size: 13px;
+            .main-title{
+                font-size: 16px;
+            }
+        }
+
+        .epcl-bg{
+            padding: 20px;
+        }
+        .post-excerpt{ margin-bottom: 0px; }
+    }
+    div.tags, .widget_tag_cloud, .widget_epcl_tag_cloud{
+        font-size: 12px;
+    }
+    .tag-description{
+        padding-left: 35px;
+        padding-right: 35px;
+        margin: 40px auto 20px;
+        .right{
+            font-size: 14px;
+        }
+    }
+
+    #single.classic .info.epcl-flex .title{
+        max-width: 50%;
+        font-size: 22px;
+    }
+
+    /* @end */
+
+    .membership-page .epcl-plan{ padding-left: 10px; padding-right: 10px; }
+    .membership-page .subscribe-plan{
+        padding: 25px;
+    }
+
+    /* @group Footer */
+
+    #footer{
+        .widgets{
+            padding: 0 30px;
+            .epcl-row{
+                display: flex;
+                flex-flow: row wrap;
+            }
+            .widget{
+                padding-bottom: 25px;
+                width: 50%;
+                margin: 0 0 40px;
+            }
+        }
+        .epcl-subscribe{
+            padding-left: 0;
+            padding-right: 0;
+        }
+    }
+
+    /* @end */
+
+}

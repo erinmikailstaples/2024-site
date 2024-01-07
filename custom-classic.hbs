@@ -1,0 +1,33 @@
+{{!< default-post}}
+
+{{! If you want to edit post sections/modules go to default-post.hbs
+which contains all sections applied for Classic/Fullcover articles }}
+
+{{#post}}
+
+    {{#contentFor "main-class"}}classic{{/contentFor}}    
+
+    {{#contentFor "bottom-image"}}
+        {{#if feature_image}}
+            <div class="featured-image vertical-style">
+                <img class="fullwidth" src="{{img_url feature_image size="classic"}}" alt="{{#if feature_image_alt}}{{feature_image_alt}}{{else}}{{title}}{{/if}}">
+            </div>
+        {{/if}}
+        <div class="info epcl-flex">    
+            <h1 class="main-title title bordered small-border-radius no-margin">{{title}}</h1>
+            <!-- start: .meta -->
+            <div class="meta">
+                <time class="meta-info" datetime="{{date format="YYYY-MM-DD"}}">{{date format="MMMM DD, YYYY"}}</time>
+                <div class="min-read meta-info">{{reading_time minute=(t "1 min read") minutes=(t "% min read")}}</div>
+                <div class="last-update"><strong>{{t "Last Update:"}}</strong> {{date updated_at format="MMMM DD, YYYY"}}</div>
+                <div class="clear"></div>
+            </div>
+            <!-- end: .meta -->             
+        </div>
+    {{/contentFor}}  
+
+    {{#contentFor "sidebar"}}
+        {{> sidebar }}
+    {{/contentFor}}  
+
+{{/post}}

@@ -1,76 +1,56 @@
-{{!< default}}
-{{!-- The tag above means: insert everything in this file into the body of the default.hbs template --}}
+{{!< default-post}}
+
+{{! If you want to edit post sections/modules go to default-post.hbs
+which contains all sections applied for Default/Classic/Fullcover articles }}
+
+{{!-- If no featured image, it will use the classic style instead --}}
 
 {{#post}}
 
-<main class="gh-main">
+    {{#contentFor "main-class"}}classic {{#if feature_image}}epcl-vertical{{/if}} {{/contentFor}}    
 
-    <article class="gh-article {{post_class}}">
-
-        <header class="gh-article-header gh-canvas">
-
-            {{#if primary_tag}}
-                <a class="gh-article-tag" href="{{primary_tag.url}}">{{primary_tag.name}}</a>
-            {{/if}}
-            <h1 class="gh-article-title is-title">{{title}}</h1>
-            {{#if custom_excerpt}}
-                <p class="gh-article-excerpt is-body">{{custom_excerpt}}</p>
-            {{/if}}
-
-            <div class="gh-article-meta">
-                <div class="gh-article-author-image">
-                    {{#foreach authors}}
-                        {{#if profile_image}}
-                            <a href="{{url}}">
-                                <img class="author-profile-image" src="{{img_url profile_image size="xs"}}" alt="{{name}}" />
-                            </a>
-                        {{else}}
-                            <a href="{{url}}">{{> "icons/avatar"}}</a>
-                        {{/if}}
-                    {{/foreach}}
-                </div>
-                <div class="gh-article-meta-wrapper">
-                    <h4 class="gh-article-author-name">{{authors}}</h4>
-                    <div class="gh-article-meta-content">
-                        <time class="gh-article-meta-date" datetime="{{date format="YYYY-MM-DD"}}">{{date}}</time>
-                        {{#if reading_time}}
-                            <span class="gh-article-meta-length"><span class="bull">—</span> {{reading_time}}</span>
-                        {{/if}}
-                    </div>
-                </div>
+    {{#contentFor "bottom-image"}}
+        {{#if feature_image}}
+            <div class="featured-image">
+                <img class="fullwidth" width="300" height="380" src="{{img_url feature_image size="loop_classic"}}" alt="{{#if feature_image_alt}}{{feature_image_alt}}{{else}}{{title}}{{/if}}">
             </div>
+            <div class="info epcl-flex">   
+                <!-- start: .meta -->
+                <div class="meta top">
+                    {{> meta-data/primary-tag }}
+                    <time class="meta-info" datetime="{{date format="YYYY-MM-DD"}}">{{date format="MMMM DD, YYYY"}}</time>
+                    <div class="min-read meta-info">{{reading_time minute=(t "1 min read") minutes=(t "% min read")}}</div>
+                </div>
+                <!-- end: .meta -->    
+                <h1 class="main-title title bordered small-border-radius no-margin">{{title}}</h1>
+                <!-- start: .meta -->
+                <div class="meta epcl-flex">
+                    <div class="hide-on-desktop-sm">
+                        {{> meta-data/author }}  
+                    </div>
+                    <div class="last-update"><strong>{{t "Last Update:"}}</strong> {{date updated_at format="MMMM DD, YYYY"}}</div>
+                </div>
+                <!-- end: .meta -->             
+            </div>
+        {{else}}
+            <div class="info epcl-flex">    
+                <h1 class="main-title title bordered small-border-radius no-margin">{{title}}</h1>
+                <!-- start: .meta -->
+                <div class="meta">
+                    <time class="meta-info" datetime="{{date format="YYYY-MM-DD"}}">{{date format="MMMM DD, YYYY"}}</time>
+                    <div class="min-read meta-info">{{reading_time minute=(t "1 min read") minutes=(t "% min read")}}</div>
+                    {{!-- {{date format="MMMM DD, YYYY"}} {{updated_at}} --}}
+                    <div class="last-update"><strong>{{t "Last Update:"}}</strong> {{date updated_at format="MMMM DD, YYYY"}}</div>
+                    <div class="clear"></div>
+                </div>
+                <!-- end: .meta -->             
+            </div>
+        {{/if}}
 
-            {{> "feature-image"}}
+    {{/contentFor}}
 
-        </header>
-
-        <section class="gh-content gh-canvas is-body">
-            {{content}}
-        </section>
-
-    </article>
-
-    {{#if comments}}
-        <div class="gh-comments gh-canvas">
-            {{comments}}
-        </div>
-    {{/if}}
-
-</main>
+    {{#contentFor "sidebar"}}
+        {{> sidebar }}
+    {{/contentFor}}
 
 {{/post}}
-
-{{#get "posts" include="authors" filter="id:-{{post.id}}" limit="4" as |next|}}
-    {{#if next}}
-        <section class="gh-container is-grid gh-outer">
-            <div class="gh-container-inner gh-inner">
-                <h2 class="gh-container-title">Read more</h2>
-                <div class="gh-feed">
-                    {{#foreach next}}
-                        {{> "post-card" lazyLoad=true}}
-                    {{/foreach}}
-                </div>
-            </div>
-        </section>
-    {{/if}}
-{{/get}}

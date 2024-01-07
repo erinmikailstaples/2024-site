@@ -1,0 +1,15 @@
+<article class="{{post_class}} item ctag-{{primary_tag.slug}} {{^if feature_image}}no-thumb{{/if}}">
+    <div class="info">                    
+        {{#if feature_image}}
+            <a href="{{url}}" class="thumb main-effect epcl-loader">
+                <span class="fullimage cover lazy" data-src="{{img_url feature_image size="thumbnail"}}"></span>
+                <span class="epcl-number">{{@number}}</span>
+            </a>
+        {{/if}}
+        <div class="right">
+            <h4 class="title usmall underline-effect"><a href="{{url}}">{{title}}</a></h4>	
+            <time datetime="{{date format='YYYY-MM-DD'}}">{{date}}</time>		
+        </div>				
+    </div>
+    <div class="clear"></div>
+</article>

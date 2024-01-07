@@ -1,22 +1,44 @@
 {{!< default}}
-{{!-- The tag above means: insert everything in this file into the body of the default.hbs template --}}
 
-<main class="gh-main gh-outer">
+<main id="archives" class="main">
 
-    {{#tag}}
-        <section class="gh-archive{{#if feature_image}} has-image{{/if}}{{#if @custom.show_publication_info_sidebar}} has-sidebar{{/if}} gh-inner">
-            <div class="gh-archive-inner">
-                <header class="gh-archive-wrapper">
-                    <h1 class="gh-article-title is-title">{{name}}</h1>
-                    {{#if description}}
-                        <p class="gh-article-excerpt">{{description}}</p>
-                    {{/if}}
-                </header>
-                {{> "feature-image"}}
+    <div class="grid-container grid-medium">
+
+        {{#tag}}
+
+            <div class="tag-description section bg-box ctag-{{slug}}">
+                <div class="left grid-35 tablet-grid-45 np-mobile">
+                    <b>{{t "Category:"}}</b>
+                    <h1 class="title medium fw-bold no-margin ctag ctag-{{slug}}"><svg><use xlink:href="#tag-decoration"></use></svg>{{name}}</h1>
+                    <div class="total">{{plural ../pagination.total empty=(t "0 <span class='dot'></span> Articles") singular=(t "1 <span class='dot'></span> Article") plural=(t "% <span class='dot'></span> Articles")}}</div>
+                    <div class="epcl-decoration-counter">{{../pagination.total}}</div>
+                    
+                </div>
+                {{#if description}}
+                    <div class="right grid-65 tablet-grid-55 np-tablet np-mobile">
+                        <p>{{description}}</p>
+                    </div>
+                {{/if}}
+                <div class="clear"></div>
+                <div class="epcl-category-overlay"></div>
             </div>
-        </section>
-    {{/tag}}
+         
+        {{/tag}}
 
-    {{> "components/post-list" feed="archive" postFeedStyle=@custom.post_feed_style showTitle=false showSidebar=@custom.show_publication_info_sidebar}}
+    </div>
+
+    <div class="grid-container {{#match @custom.archives_layout "Masonry"}}{{/match}}">
+        <div class="epcl-row">
+            <!-- start: .content-wrapper -->
+            <div class="content-wrapper content">      
+                {{#match @custom.archives_layout "Masonry"}}
+                    {{> home-blocks/grid-posts}}
+                {{else}}
+                    {{> home-blocks/classic-posts}}
+                {{/match}}                 
+            </div>
+            <!-- end: .content-wrapper -->
+        </div>
+    </div>
 
 </main>

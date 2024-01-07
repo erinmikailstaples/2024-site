@@ -1,0 +1,30 @@
+<!-- start: .widget-social -->
+<div class="widget widget_epcl_social bg-box grid-25 tablet-grid-50 mobile-grid-100">
+    <h4 class="widget-title title medium bordered">{{t "Follow Me!" }}</h4>
+    <div class="icons">
+        {{#if @site.facebook}}
+            <a href="{{facebook_url}}" class="facebook" target="_blank" rel="nofollow noopener">
+                <span class="icon facebook"><i class="fa fa-facebook"></i></span>
+                <span class="name">Facebook</span>
+            </a>
+        {{/if}}
+        {{#if @site.twitter}}
+            <a href="{{twitter_url @site.twitter}}" class="twitter" target="_blank" rel="nofollow noopener">
+                <span class="icon twitter"><svg><use xlink:href="#twitter-icon"></use></svg></span>
+                <span class="name">Twitter</span>
+            </a>
+        {{/if}}
+        {{!-- Here you can add your own custom profiles, replace # with any link/url you want --}}
+        {{#if @custom.instagram_url}}
+            <a href="{{@custom.instagram_url}}" class="instagram" target="_blank">
+                <span class="icon instagram"><i class="fa fa-instagram"></i></span>
+                <span class="name">Instagram</span>
+            </a>
+        {{/if}}
+        <a href="{{@site.url}}/rss" class="rss" target="_blank">
+            <span class="icon rss"><i class="fa fa-rss"></i></span>
+            <span class="name">RSS</span>
+        </a>
+    </div>			
+</div>
+<!-- end: .widget-social-->

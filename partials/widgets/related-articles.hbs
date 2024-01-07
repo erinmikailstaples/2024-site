@@ -1,0 +1,14 @@
+{{#is "post"}}
+    {{#get "posts" filter="id:-{{id}}+primary_tag:{{primary_tag.slug}}" limit="5" as |related-sidebar| }}
+        {{#if related-sidebar}}
+            <!-- start: related-articles -->
+            <div class="widget widget_epcl_posts_thumbs bg-box grid-25 tablet-grid-50 mobile-grid-100">
+                <h4 class="widget-title title medium bordered">{{t "Related Articles" }}</h4>
+                {{#foreach related-sidebar visibility="all"}}
+                    {{> widgets/loop-article }}
+                {{/foreach}}
+            </div>
+            <!-- end: related-articles -->
+        {{/if}}
+    {{/get}}
+{{/is}}

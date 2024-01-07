@@ -1,0 +1,12 @@
+{{#get "posts" limit="3" include="tags" as |recent-articles| }}
+    {{#if recent-articles}}
+        <!-- start: .recent-articles -->
+        <div class="widget widget_epcl_posts_thumbs bg-box grid-25 tablet-grid-50 mobile-grid-100">
+            <h4 class="widget-title title medium bordered">{{t "Latest Articles" }}</h4>
+            {{#foreach recent-articles visibility="all"}}
+                {{> widgets/loop-article }}
+            {{/foreach}}        
+        </div>
+        <!-- end: .recent-articles -->
+    {{/if}}
+{{/get}}

@@ -1,0 +1,63 @@
+<article class="bg-box default classic-large primary-cat-4 grid-100 tablet-grid-100 ctag-{{primary_tag.slug}} {{^if feature_image}}no-image{{/if}}">
+     
+    <div class="post-format-image epcl-flex">
+        <div class="featured-image">    
+
+            {{#if feature_image}}
+                <a href="{{url}}" class="thumb epcl-loader main-effect medium-shadow">   
+                    <span class="fullimage cover lazy" data-src="{{ img_url feature_image size="loop_classic" }}"></span>  
+                </a>
+
+                {{!-- Comments and Visibility Icons --}}
+                {{> meta-data/comments-absolute }}
+                
+            {{/if}}
+
+        </div>
+
+        <div class="info">   
+            <header> 
+                <!-- start: .meta -->
+                <div class="meta epcl-flex">
+                    {{!-- Tags: Just the first one --}}
+                    {{> meta-data/primary-tag }}
+                    <time class="meta-info" datetime="{{date format='YYYY-MM-DD'}}">{{date format="MMMM DD, YYYY"}}</time>  
+                    <div class="min-read meta-info hide-on-tablet hide-on-desktop-sm">{{reading_time minute=(t "1 min read") minutes=(t "% min read")}}</div>
+                    <div class="clear"></div>
+                </div>
+                <!-- end: .meta -->            
+                <h1 class="main-title title large underline-effect"><a href="{{url}}">{{title}}</a></h1>
+            </header>
+
+            <div class="post-excerpt">        
+                {{#if feature_image}}            
+                    <p>{{excerpt words="25"}}...</p>   
+                {{else}}
+                    <p>{{excerpt words="55"}}...</p>   
+                {{/if}} 
+                <div class="clear"></div>              
+            </div>  
+
+            <footer class="bottom">
+                <div class="meta bottom">
+                    <a href="{{url}}" class="continue-reading epcl-button white active">{{t "Continue Reading"}} <svg><use xlink:href="#right-arrow"></use></svg></a>
+                    {{#foreach authors limit="1" }}
+                        <a href="{{url}}" title="{{name}}" class="author meta-info hide-on-mobile hide-on-tablet hide-on-desktop-sm">                                        
+                            {{#if profile_image}}
+                                <span class="author-image cover lazy" data-src="{{img_url profile_image size="thumbnail"}}"></span>                       
+                            {{/if}}                    
+                            <span class="author-name">{{name}}</span>
+                        </a>
+                    {{/foreach}}
+                </div>
+            </footer>
+
+        </div>
+
+    </div>
+
+    <div class="clear"></div>
+
+    <div class="epcl-category-overlay"></div>
+
+</article>

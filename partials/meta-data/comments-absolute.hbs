@@ -1,0 +1,19 @@
+<div class="meta absolute">
+    <a href="{{url}}#comments" class="comments meta-info icon mobile tooltip" title="{{t "Go to comments"}}"><svg><use xlink:href="#comments-icon"></use></svg></a>  
+
+    {{#has visibility="members"}}
+        <a href="{{url}}" class="access-icon visibility-members meta-info tooltip" title="{{t "Members Article"}}">
+            <svg><use xlink:href="#locked"></use></svg>                
+        </a>
+    {{/has}}
+    {{#has visibility="paid"}}
+        <a href="{{url}}" class="access-icon visibility-paid meta-info tooltip" title="{{t "Premium Article"}}">         
+            <svg><use xlink:href="#vip"></use></svg>     
+        </a>
+    {{/has}}
+    {{#has visibility="tiers"}}
+        <a href="{{url}}" class="access-icon visibility-paid meta-info tooltip" title="{{t "Premium Article"}}">         
+            <svg><use xlink:href="#vip"></use></svg>     
+        </a>
+    {{/has}}
+</div>

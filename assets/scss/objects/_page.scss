@@ -1,0 +1,25 @@
+/* @group Page */
+
+#page{
+    #single{
+        .share-buttons{ margin-top: 0; }
+        .post-content{ margin-top: 0; }
+        .title.absolute{
+            top: -25px;
+            left: 60px;
+        }
+        &.fullcover{
+            .featured-image{
+                margin-bottom: $section-padding;
+                div.info{
+                    position: absolute;
+                    max-width: none;
+                    .title{ font-size: 38px; }
+                }
+            }
+
+        }
+    }
+}
+
+/* @end */

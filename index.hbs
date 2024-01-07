@@ -1,6 +1,22 @@
 {{!< default}}
-{{!-- The tag above means: insert everything in this file into the body of the default.hbs template --}}
 
-<main class="gh-main">
-    {{> "components/post-list" feed="index" postFeedStyle=@custom.post_feed_style showTitle=true showSidebar=@custom.show_publication_info_sidebar}}
+<main id="home" class="main grid-container {{#match @custom.home_layout "Masonry"}}{{/match}}">
+    
+    <div class="epcl-row">
+        <!-- start: .content-wrapper -->
+        <div class="content-wrapper content">      
+            {{#match @custom.home_layout "Masonry"}}
+                {{> home-blocks/grid-posts}}
+            {{else}}
+                {{> home-blocks/classic-posts}}
+            {{/match}}                 
+        </div>
+        <!-- end: .content-wrapper -->
+
+        {{#if @custom.home_authors_carousel}}
+            {{> home-blocks/meet-authors}}
+        {{/if}}
+
+    </div>
+
 </main>

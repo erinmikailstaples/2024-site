@@ -1,0 +1,43 @@
+<!-- start: #header -->
+<header id="header" class="minimalist enable-sticky">
+
+	<div class="menu-mobile">
+        <svg class="icon ularge open"><use xlink:href="#menu-icon"></use></svg>
+        <svg class="icon ularge close"><use xlink:href="#close-icon"></use></svg>
+    </div>
+
+	<!-- start: .menu-wrapper -->
+	<div class="menu-wrapper">
+	
+		<div class="grid-container">
+            <div class="bg-box">
+                {{> site-logo }}
+
+                <a href="javascript:void(0)" data-ghost-search class="epcl-search-button button circle dark"><svg class="icon"><use xlink:href="#search-icon"></use></svg></a>
+                
+                <!-- start: .main-nav -->
+                <nav class="main-nav">      
+                    {{navigation}}                    
+                </nav>
+                <!-- end: .main-nav -->
+
+                <div class="epcl-social-buttons fill-color hide-on-tablet hide-on-mobile hide-on-desktop-sm">
+                    {{> social-buttons}}
+                </div>
+
+                <div class="clear"></div>
+            
+            </div>		
+            
+            <div class="clear"></div>
+        </div>
+		
+	</div>
+	<!-- end: .menu-wrapper -->
+	
+	<div class="clear"></div>
+
+</header>
+<!-- end: #header -->
+
+{{> search-box}}

@@ -1,0 +1,12 @@
+
+{{#if @site.facebook}}
+    <a href="{{facebook_url}}" class="facebook" target="_blank" rel="nofollow noopener"><i class="fa fa-facebook"></i></a>
+{{/if}}
+{{#if @site.twitter}}
+    <a href="{{twitter_url @site.twitter}}" class="twitter" target="_blank" rel="nofollow noopener"><svg><use xlink:href="#twitter-icon"></use></svg></a>
+{{/if}}
+{{!-- Here you can add your own custom profiles, replace # with any link/url you want --}}
+{{#if @custom.instagram_url}}
+    <a href="{{@custom.instagram_url}}" class="instagram" target="_blank"><i class="fa fa-instagram"></i></a>
+{{/if}}
+<a href="{{@site.url}}/rss" class="rss" target="_blank"><i class="fa fa-rss"></i></a>

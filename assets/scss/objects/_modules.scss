@@ -1,0 +1,60 @@
+/* @group EPCL Modules */
+
+.epcl-carousel{
+    padding: 0;
+    // visibility: hidden;
+    height: 300px;
+    // opacity: 0;
+	margin: 40px auto 0;
+    @include transition(1000ms);
+    &.slick-initialized{
+        visibility: visible;
+        height: inherit;
+        opacity: 1;
+    }
+	.item{
+        text-align: center;
+        padding: 10px 0;
+		.img{
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+			@include transition;
+		}
+		article{
+			position: relative;
+			z-index: 1;
+            margin: 0 15px;
+            height: 300px;
+            background: $white;
+            box-shadow: $large-shadow;
+			@include transition();
+			&:hover{
+				transform: translateY(-3px);
+			}
+		}
+		.info{
+			position: absolute;
+			left: 0;
+			bottom: 15px;
+			width: 100%;
+			box-sizing: border-box;
+			padding: 20px 30px;
+			z-index: 2;
+            time{ padding-bottom: 7px; display: inline-block; }
+            div.meta{
+                margin-top: 20px;
+                .meta-info{ margin-right: 0; }
+            }
+            .author{ display: inline-block; }
+		}
+        .counter{
+            top: 50%;
+            opacity: 0.05;
+        }
+        
+	}
+}
+
+/* @end */
+    

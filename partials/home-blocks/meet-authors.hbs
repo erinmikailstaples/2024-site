@@ -1,0 +1,37 @@
+{{#get "authors" limit="20" include="count.posts" order="count.posts desc" as |meet-authors| }}
+    <div class="clear"></div>
+    <section class="epcl-authors section grid-container np-tablet" id="epcl-authors">
+        <h3 class="title medium bordered">{{t "Meet the Authors"}}</h3>
+        <!-- start: .epcl-authors -->
+        <div class="{{^is "page"}}epcl-carousel slick-slider top-arrows{{/is}} epcl-row" data-show="5" data-rtl="false">       
+            {{#foreach meet-authors visibility="all"}}
+                {{#if profile_image}}
+                    <div class="item {{#is "page"}}grid-25 tablet-grid-33{{/is}}">
+                        <a href="{{url}}" title="{{t "Articles:"}} {{count.posts}}" class="shadow-effect thumb epcl-loader">                                        
+                            <img class="lazy fullwidth img" data-src="{{img_url profile_image size="loop_classic"}}">                  
+                            <span class="info"><h4 class="title bordered usmall">{{name}}</h4></span>
+                        </a>
+                        <div class="social">
+                            {{#if twitter}}
+                                <a href="{{twitter_url}}" class="twitter tooltip" title="{{ t 'Follow me on Twitter' }} " target="_blank"><svg class="icon"><use xlink:href="#twitter-icon"></use></svg></a>
+                            {{/if}}
+                            {{#if facebook}}
+                                <a href="{{facebook_url}}" class="facebook tooltip" title="{{ t 'Follow me on Facebook' }}" target="_blank"><i class="fa fa-facebook"></i></a>
+                            {{/if}}
+                            {{#if website}}
+                                {{!-- <a href="{{website}}" class="website tooltip" title="{{ t 'Website' }}: {{website}}" target="_blank"><i class="fa fa-globe"></i></a> --}}
+                            {{/if}}
+                        </div> 
+                        {{#is "page"}}
+                            <div class="bio">
+                                {{bio}}
+                            </div>
+                        {{/is}}
+                    </div>
+                {{/if}} 
+            {{/foreach}}                        
+        </div>
+        <!-- end: .epcl-authors -->
+        <div class="clear"></div>
+    </section>
+{{/get}}

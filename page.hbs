@@ -1,26 +1,54 @@
 {{!< default}}
-{{!-- The tag above means: insert everything in this file into the body of the default.hbs template --}}
 
 {{#post}}
 
-<main class="gh-main">
-    <article class="gh-article {{post_class}}">
-
+<!-- start: #page -->
+<main id="page" class="main grid-container">
+	
+    <!-- start: .center -->
+    <div id="single" class="content fullcover no-sidebar">
+        
         {{#match @page.show_title_and_feature_image}}
-            <header class="gh-article-header gh-canvas">
-                <h1 class="gh-article-title is-title">{{title}}</h1>
-                {{#if custom_excerpt}}
-                    <p class="gh-article-excerpt is-body">{{custom_excerpt}}</p>
-                {{/if}}
-                {{> "feature-image"}}
-            </header>
+            {{#if feature_image }}
+                <div class="post-format-wrapper featured-image cover">
+                    <img src="{{asset '/images/transparent.gif'}}" data-src="{{img_url feature_image size="single_fullcover" }}" alt="{{title}}" class="lazy fullwidth">
+                    <div class="info">
+                        <h1 class="title large bordered small-border-radius">{{title}}</h1>
+                    </div>
+                </div>
+            {{/if}}
         {{/match}}
 
-        <section class="gh-content gh-canvas is-body">
-            {{content}}
-        </section>
+        <div class="content">
+        
+            <!-- start: .left-content -->
+            <div class="left-content grid-70 np-mobile">
+                <article class="main-article bg-box {{post_class}}">
+                
+                    <section class="post-content">
+                        {{#match @page.show_title_and_feature_image}}
+                            {{^if feature_image }}
+                                <h1 class="title large bold absolute bordered small-border-radius">{{title}}</h1>
+                            {{/if}}
+                        {{/match}}
+                        <div class="text">
+                            {{content}}
+                        </div>
+                        <div class="clear"></div>
+                    </section>
+                    
+                </article>
+            </div>
+            <!-- end: .content -->
+            
+            <div class="clear"></div>
 
-    </article>
+        </div>
+    
+    </div>
+    <!-- end: .center -->
+    
 </main>
+<!-- end: #page -->
 
 {{/post}}

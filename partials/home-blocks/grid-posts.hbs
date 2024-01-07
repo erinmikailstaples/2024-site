@@ -1,0 +1,14 @@
+<div class="center">
+    <!-- start: .articles -->
+    <div class="articles grid-posts" >
+                
+        {{#foreach posts visibility="all"}}
+            {{> loop/grid-article}}                 
+        {{/foreach}}
+        
+    </div>
+    <!-- end: .articles -->
+    
+    {{pagination}}
+
+</div>

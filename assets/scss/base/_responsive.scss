@@ -1,0 +1,81 @@
+/* CSS Document */
+
+@media screen and (min-width: 1201px){
+    .hide-on-desktop-lg{ display: none !important; }
+}
+
+@media screen and (max-width: 1450px){
+    .grid-container{ max-width: 1200px; }
+    div.articles .continue-reading svg{ display: none; }
+    div.articles.grid-posts article .bottom .author{
+        margin-left: 0;
+    }
+}
+
+/* Small Desktops */
+
+@media screen and (min-width: 981px) and (max-width: 1200px){
+
+    .hide-on-desktop-sm{ display: none !important; }
+	body{ min-width: inherit; font-size: 14px; }
+	img{ max-width: 100%; height: auto; }
+    .grid-container{ padding-left: 40px; padding-right: 40px; }
+    .title{ font-size: 20px; }
+
+    #header{
+        .logo{
+            .title{
+                font-size: 50px;
+            }
+        }
+    }
+
+    #page div.left-content{
+        padding-left: 20px;
+    }
+    #single div.left-content{
+        padding-left: 20px;
+    }
+    div.articles{
+
+        &.classic{
+        }
+        &.grid-posts{
+            article{
+                width: 50%;
+            }
+        }
+    }
+    .widget_epcl_about .avatar{
+        margin-right: 10px;
+    }
+    
+    #footer{
+        border-bottom: 0;
+        .widgets{
+            padding: 0 20px;
+            .epcl-row{
+                display: flex;
+                flex-flow: row wrap;
+            }
+            .widget{
+                padding-bottom: 25px;
+                width: 50%;
+                margin: 0 0 40px;
+            }
+        }
+    }
+
+}
+
+/* All Mobile Devices */
+
+@import "responsive/all-mobile";
+
+/* Tablets */
+
+@import "responsive/tablet";
+
+/* SmartPhones and small tablets */
+
+@import "responsive/mobile";

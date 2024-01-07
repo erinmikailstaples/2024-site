@@ -1,0 +1,63 @@
+<article class="default grid-33 tablet-grid-50 mobile-grid-100 np-mobile ctag-{{primary_tag.slug}} post-access-{{visibility}} {{^if feature_image}}no-image{{/if}}">
+    <div class="epcl-bg bg-box">
+        <header>            
+            <div class="post-format-image ">
+                <div class="featured-image">
+                                    
+                    {{#if feature_image}}
+                        <a href="{{url}}" class="thumb epcl-loader">
+                            {{#if @first}}
+                                <span class="fullimage cover" style="background-image: url({{ img_url feature_image size="loop_grid" }});"></span>
+                            {{else}}
+                                <span class="fullimage cover lazy" data-src="{{ img_url feature_image size="loop_grid" }}"></span>
+                            {{/if}}   
+                        </a>
+                    {{/if}}
+                    
+                    <div class="info textleft">                
+                        <h1 class="main-title title large inline shadow-effect"><a href="{{url}}">{{title}}</a></h1>
+                    </div>
+
+                    {{!-- Comments and Visibility Icons --}}
+                    {{> meta-data/comments-absolute }}
+
+                    {{!-- Tags: Just the first one --}}
+                    {{> meta-data/primary-tag }}
+    
+                </div>
+
+                <div class="clear"></div>
+                <!-- start: .meta -->
+                <div class="meta date">
+                    <time class="meta-info" datetime="{{date format='YYYY-MM-DD'}}">{{date format="MMMM DD, YYYY"}}</time>  
+                    <div class="min-read meta-info">{{reading_time minute=(t "1 min read") minutes=(t "% min read")}}</div>
+                    <div class="clear"></div>
+                </div>
+                <!-- end: .meta -->
+            </div>    
+            
+        </header>
+        
+        <div class="post-excerpt">                    
+            <p>{{excerpt characters="100"}}...</p>    
+            <div class="clear"></div>              
+        </div>  
+        
+        <footer class="bottom">
+            <div class="meta bottom">
+                {{!-- Author: Just the first one --}}
+                {{> meta-data/author }}
+                
+                <a href="{{url}}" class="continue-reading epcl-button white">{{t "Continue Reading"}}</a>
+                
+                <div class="clear"></div>
+            </div>
+        </footer>
+
+        <div class="clear"></div>
+
+        <div class="epcl-category-overlay"></div>
+
+    </div>    
+
+</article>

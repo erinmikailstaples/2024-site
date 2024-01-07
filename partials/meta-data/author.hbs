@@ -1,0 +1,8 @@
+{{#foreach authors limit="1" }}
+    <a href="{{url}}" title="{{name}}" class="author meta-info hide-on-mobile hide-on-tablet">                                        
+        {{#if profile_image}}
+            <span class="author-image cover lazy" data-src="{{img_url profile_image size="thumbnail"}}"></span>                       
+        {{/if}}                    
+        <span class="author-name">{{name}}</span>
+    </a>
+{{/foreach}}
