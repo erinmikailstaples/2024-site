@@ -1,7 +1,7 @@
 <!-- start: .author -->
 <section id="author" class="author section bg-box {{#if profile_image}} with-avatar{{else}} no-avatar{{/if}} {{#is "post"}}single-author{{/is}}">
     {{#is "post"}}
-        <h3 class="title medium bordered absolute">{{t "About the Author"}}</h3>
+        <h3 class="title medium bordered absolute">{{t "about erin"}}</h3>
     {{/is}}
     <div class="single-wrapper">
         <div class="flex">
@@ -57,7 +57,7 @@
 
         {{#get "posts" filter="id:-{{id}}+primary_author:{{slug}}" limit="3" as |author-posts|}}
             <div class="author-posts widget widget_epcl_posts_thumbs">
-                <h4 class="title usmall">{{{t "Check latest articles from <b>this author:</b>"}}}</h4>
+                <h4 class="title usmall">{{{t "Latest articles from <b>this author:</b>"}}}</h4>
                 {{#foreach author-posts}}
                     <article class="{{post_class}} item ctag-{{primary_tag.slug}} {{^if feature_image}}no-thumb{{/if}}">
                         <div class="info">                    
