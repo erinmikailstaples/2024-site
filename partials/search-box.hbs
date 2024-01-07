@@ -12,7 +12,7 @@
         <div id="search-results" class="grid-container np-mobile"></div>
         {{#get "tags" limit="5" order="count.posts desc"}}
             <div class="categories hide-on-mobile">
-                <h5 class="textcenter">{{{t "Or check our <span>P</span>opular <span>C</span>ategories..."}}}</h5>
+                <h5 class="textcenter">{{{t "Check out <span>P</span>opular <span>C</span>ategories..."}}}</h5>
                 <div class="widget_tag_cloud">
                     {{#foreach tags visibility="public"}}
                         <a href="{{url}}" class="ctag ctag-{{slug}}" data-id="ctag-{{slug}}">{{name}}</a>
