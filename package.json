@@ -2,138 +2,141 @@
 	"name": "groovy",
 	"version": "1.4.5",
 	"demo": "https://ghost.estudiopatagon.com/groovy",
-    "engines": {
-        "ghost": ">=5.0.0"
-    },
+	"engines": {
+		"ghost": ">=5.0.0"
+	},
 	"author": {
-		"name": "Estudio Patagon",
-        "email": "admin@estudiopatagon.com",
-        "url": "https://estudiopatagon.com"
+		"name": "Erin Mikail Staples",
+		"email": "erin@erinmikailstaples.com",
+		"url": "https://erinmikailstaples.com"
 	},
 	"gpm": {
-        "type": "theme",
-        "categories": [
-            "Minimal",
-            "Magazine"
-        ]
-    },
+		"type": "theme",
+		"categories": [
+			"Minimal",
+			"Magazine"
+		]
+	},
 	"config": {
-        "posts_per_page": 6,
-        "image_sizes": {
-            "thumbnail": {
-                "width": 120,
-                "height": 120
-            },
-            "medium": {
-                "width": 300,
-                "height": 300
-            },
-            "loop_classic": {
-                "width": 450,
-                "height": 550
-            },
-            "loop_grid": {
-                "width": 450,
-                "height": 450
-            },
-            "classic": {
-                "width": 950,
-                "height": 500
-            },
-            "fullcover": {
-                "width": 1700,
-                "height": 700
-            }
-        },
-        "card_assets": true,
-        "custom": {
-            "design_style": {
-                "type": "select",
-                "options": [
-                    "Solid Border",
-                    "Soft Shadow"
-                ],
-                "default": "Solid Border"
-            },
-            "background_color": {
-                "type": "color",
-                "default": "#54CBCA"
-            },
-            "boxes_background_color": {
-                "type": "color",
-                "default": "#fffacd"
-            },
-            "background_decorations": {
-                "type": "boolean",
-                "default": true
-            },
-            "custom_content_color": {
-                "type": "boolean",
-                "default": true,
-                "group": "post"
-            },
-            "custom_tag_colors": {
-                "type": "boolean",
-                "default": true
-            },
-            "sidebar_about_me_widget": {
-                "type": "boolean",
-                "default": true
-            },
-            "sidebar_social_feed_widgets": {
-                "type": "boolean",
-                "default": false
-            },
-            "home_layout": {
-                "type": "select",
-                "options": [
-                    "Classic",
-                    "Masonry"
-                ],
-                "default": "Classic",
-                "group": "homepage"
-            },
-            "custom_boxes_color": {
-                "type": "boolean",
-                "default": true,
-                "group": "homepage"
-            },
-            "home_authors_carousel": {
-                "type": "boolean",
-                "default": true,
-                "group": "homepage"
-            },
-            "archives_layout": {
-                "type": "select",
-                "options": [
-                    "Classic",
-                    "Masonry"
-                ],
-                "default": "Classic"
-            },
-            "comments_engine": {
-                "type": "select",
-                "options": [
-                    "Native",
-                    "Disqus"
-                ],
-                "default": "Native",
-                "group": "post"
-            },
-            "disqus_shortname": {
-                "type": "text",
-                "default": "ghostexample",
-                "group": "post"
-            },
-            "instagram_url": {
-                "type": "text",
-                "default": "https://www.instagram.com/estudiopatagon/"
-            }
-        }
-    },
-    "keywords": [
-        "ghost",
-        "theme",
-        "ghost-theme"
-    ]
+		"posts_per_page": 6,
+		"image_sizes": {
+			"thumbnail": {
+				"width": 120,
+				"height": 120
+			},
+			"medium": {
+				"width": 300,
+				"height": 300
+			},
+			"loop_classic": {
+				"width": 450,
+				"height": 550
+			},
+			"loop_grid": {
+				"width": 450,
+				"height": 450
+			},
+			"classic": {
+				"width": 950,
+				"height": 500
+			},
+			"fullcover": {
+				"width": 1700,
+				"height": 700
+			}
+		},
+		"card_assets": true,
+		"custom": {
+			"design_style": {
+				"type": "select",
+				"options": [
+					"Solid Border",
+					"Soft Shadow"
+				],
+				"default": "Solid Border"
+			},
+			"background_color": {
+				"type": "color",
+				"default": "#54CBCA"
+			},
+			"boxes_background_color": {
+				"type": "color",
+				"default": "#fffacd"
+			},
+			"background_decorations": {
+				"type": "boolean",
+				"default": true
+			},
+			"custom_content_color": {
+				"type": "boolean",
+				"default": true,
+				"group": "post"
+			},
+			"custom_tag_colors": {
+				"type": "boolean",
+				"default": true
+			},
+			"sidebar_about_me_widget": {
+				"type": "boolean",
+				"default": true
+			},
+			"sidebar_social_feed_widgets": {
+				"type": "boolean",
+				"default": false
+			},
+			"home_layout": {
+				"type": "select",
+				"options": [
+					"Classic",
+					"Masonry"
+				],
+				"default": "Classic",
+				"group": "homepage"
+			},
+			"custom_boxes_color": {
+				"type": "boolean",
+				"default": true,
+				"group": "homepage"
+			},
+			"home_authors_carousel": {
+				"type": "boolean",
+				"default": true,
+				"group": "homepage"
+			},
+			"archives_layout": {
+				"type": "select",
+				"options": [
+					"Classic",
+					"Masonry"
+				],
+				"default": "Classic"
+			},
+			"comments_engine": {
+				"type": "select",
+				"options": [
+					"Native",
+					"Disqus"
+				],
+				"default": "Native",
+				"group": "post"
+			},
+			"disqus_shortname": {
+				"type": "text",
+				"default": "ghostexample",
+				"group": "post"
+			},
+			"instagram_url": {
+				"type": "text",
+				"default": "https://www.instagram.com/erinmikail/"
+			}
+		}
+	},
+	"keywords": [
+		"ghost",
+		"theme",
+		"ghost-theme"
+	],
+	"dependencies": {
+		"launchdarkly-js-client-sdk": "^3.1.4"
+	}
 }
